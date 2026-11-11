@@ -1,0 +1,33 @@
+# Reproducible pipeline: `dvc repro` re-runs only the stages whose inputs changed.
+# CWRU lives OUTSIDE the repo (../cwru_data); DVC cannot track outside paths, so the cv_fold
+# stage only re-runs when its code changes. Track your own recordings with `dvc add`.
+# Parameters live in params.yaml.
+stages:
+  train_synthetic:
+    cmd: cd src && python3 main.py
+    deps:
+      - src/main.py
+      - src/synthetic_data.py
+      - src/feature_engineering.py
+      - src/lstm_autoencoder.py
+      - src/calibration.py
+      - src/pdm_config.py
+    outs:
+      - outputs/lstm_autoencoder.keras
+      - outputs/lstm_autoencoder.onnx
+      - outputs/threshold_and_norm.npz
+      - outputs/healthy_reference_features.npy
+      - outputs/rul_config.json
+    metrics:
+      - outputs/benchmark_results.json:
+          cache: false
+  cv_fold:                       # run per held-out load; see README for the CWRU download
+    foreach: [0, 1, 2, 3]
+    do:
+      cmd: cd src && python3 benchmark_cv.py --fold ${item} --only F,I --no-baselines --epochs 40
+      deps:
+        - src/benchmark_cv.py
+        - src/models.py
+        - src/augment.py
+      outs:
+        - outputs/cv_parts/fold${item}_seed0_F-I.json

@@ -1,0 +1,5 @@
+# Mirrors src/pdm_config.py (single source of truth in code; edit there).
+sample_rate_hz: 1600
+window_s: 1.0
+window_overlap: 0.5
+seq_len: 15

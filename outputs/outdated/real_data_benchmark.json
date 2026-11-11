@@ -1,0 +1,55 @@
+{
+  "false_positive_rate": {
+    "LSTM Autoencoder": 0.23076923076923078,
+    "Isolation Forest": 0.058823529411764705,
+    "One-Class SVM": 0.1411764705882353,
+    "Statistical Threshold": 0.03529411764705882
+  },
+  "sensitivity_by_fault": {
+    "LSTM Autoencoder": {
+      "Inner Race / 0.007in": 1.0,
+      "Inner Race / 0.014in": 1.0,
+      "Inner Race / 0.021in": 1.0,
+      "Ball / 0.007in": 1.0,
+      "Ball / 0.014in": 1.0,
+      "Ball / 0.021in": 1.0,
+      "Outer Race / 0.007in": 1.0,
+      "Outer Race / 0.014in": 1.0,
+      "Outer Race / 0.021in": 1.0
+    },
+    "Isolation Forest": {
+      "Inner Race / 0.007in": 1.0,
+      "Inner Race / 0.014in": 1.0,
+      "Inner Race / 0.021in": 1.0,
+      "Ball / 0.007in": 1.0,
+      "Ball / 0.014in": 1.0,
+      "Ball / 0.021in": 1.0,
+      "Outer Race / 0.007in": 1.0,
+      "Outer Race / 0.014in": 1.0,
+      "Outer Race / 0.021in": 1.0
+    },
+    "One-Class SVM": {
+      "Inner Race / 0.007in": 1.0,
+      "Inner Race / 0.014in": 1.0,
+      "Inner Race / 0.021in": 1.0,
+      "Ball / 0.007in": 1.0,
+      "Ball / 0.014in": 1.0,
+      "Ball / 0.021in": 1.0,
+      "Outer Race / 0.007in": 1.0,
+      "Outer Race / 0.014in": 1.0,
+      "Outer Race / 0.021in": 1.0
+    },
+    "Statistical Threshold": {
+      "Inner Race / 0.007in": 1.0,
+      "Inner Race / 0.014in": 1.0,
+      "Inner Race / 0.021in": 1.0,
+      "Ball / 0.007in": 1.0,
+      "Ball / 0.014in": 1.0,
+      "Ball / 0.021in": 1.0,
+      "Outer Race / 0.007in": 1.0,
+      "Outer Race / 0.014in": 1.0,
+      "Outer Race / 0.021in": 1.0
+    }
+  },
+  "notes": "Trained on real CWRU healthy baseline data only (4 files, ~35s concatenated, 4 different motor loads). Tested against 9 real fault recordings spanning 3 fault mechanisms (Inner Race, Ball, Outer Race) x 3 defect severities (0.007in/0.014in/0.021in). No temperature channel in CWRU -> that feature was zero-filled. Small healthy training set (real dataset limitation, not a pipeline limitation) -- more baseline recordings would improve threshold stability."
+}

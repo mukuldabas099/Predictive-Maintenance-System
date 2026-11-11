@@ -1,0 +1,12 @@
+# Devices may only PUBLISH their sensor topics (and cannot read anything).
+user pdm_device
+topic write pdm/+/vib_bin
+topic write pdm/+/vibration
+topic write pdm/+/temperature
+topic write pdm/+/stats
+topic write pdm/+/status
+
+# The backend reads everything and publishes scores.
+user pdm_backend
+topic read pdm/#
+topic write pdm/+/anomaly_score

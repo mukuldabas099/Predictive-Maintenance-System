@@ -1,0 +1,10 @@
+apiVersion: 1
+datasources:
+  - name: PdM
+    uid: pdm-pg
+    type: postgres
+    url: timescaledb:5432
+    user: pdm
+    isDefault: true
+    secureJsonData: {password: "$PG_PASSWORD"}
+    jsonData: {database: pdm, sslmode: disable, timescaledb: true, postgresVersion: 1600}

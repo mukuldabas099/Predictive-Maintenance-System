@@ -1,0 +1,22 @@
+[
+  {
+    "method": "LSTM Autoencoder",
+    "false_positive_rate_%": 0.08,
+    "detection_lag_s": 143.5
+  },
+  {
+    "method": "Isolation Forest",
+    "false_positive_rate_%": 1.04,
+    "detection_lag_s": 0.0
+  },
+  {
+    "method": "One-Class SVM",
+    "false_positive_rate_%": 2.84,
+    "detection_lag_s": 0.0
+  },
+  {
+    "method": "Statistical Threshold",
+    "false_positive_rate_%": 4.94,
+    "detection_lag_s": 0.0
+  }
+]

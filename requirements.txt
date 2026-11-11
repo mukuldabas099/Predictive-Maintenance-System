@@ -1,0 +1,25 @@
+numpy
+scipy
+scikit-learn
+matplotlib
+pandas
+altair
+tensorflow          # training. Use Python 3.10-3.12; newest Python versions may lack TensorFlow wheels
+streamlit
+paho-mqtt>=2.0      # code uses the v2 callback API
+aiosmtpd            # only needed to run tests/test_pipeline.py (local mail server)
+
+# serving / infrastructure (all optional)
+onnxruntime         # run the bridge without TensorFlow (python3 src/export_onnx.py first)
+onnx                # needed only to export (export_onnx.py)
+tf2onnx             # needed only to export
+psycopg2-binary     # PostgreSQL / TimescaleDB storage (PDM_PG_DSN)
+influxdb            # legacy InfluxDB 1.x storage (alternative to PostgreSQL)
+mlflow-skinny       # experiment tracking (optional)
+sqlalchemy          # (MLflow SQLite backend)
+alembic             # (MLflow SQLite backend)
+
+# phase 3 (optional)
+PyWavelets          # wavelet-packet features (advanced=True)
+optuna              # tune.py
+dvc                 # dvc.yaml pipeline

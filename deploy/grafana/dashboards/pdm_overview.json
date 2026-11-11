@@ -1,0 +1,191 @@
+{
+ "uid": "pdm-overview",
+ "title": "PdM overview",
+ "schemaVersion": 39,
+ "version": 1,
+ "refresh": "10s",
+ "time": {
+  "from": "now-1h",
+  "to": "now"
+ },
+ "panels": [
+  {
+   "id": 1,
+   "type": "timeseries",
+   "title": "Anomaly score vs threshold",
+   "datasource": {
+    "type": "postgres",
+    "uid": "pdm-pg"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "postgres",
+      "uid": "pdm-pg"
+     },
+     "format": "time_series",
+     "rawQuery": true,
+     "editorMode": "code",
+     "rawSql": "SELECT time, score AS \"score\", threshold AS \"threshold\" FROM pdm_scores WHERE $__timeFilter(time) AND machine_id = '$machine' ORDER BY time"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "type": "timeseries",
+   "title": "Alarm state (1 = alarm)",
+   "datasource": {
+    "type": "postgres",
+    "uid": "pdm-pg"
+   },
+   "gridPos": {
+    "x": 12,
+    "y": 0,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "postgres",
+      "uid": "pdm-pg"
+     },
+     "format": "time_series",
+     "rawQuery": true,
+     "editorMode": "code",
+     "rawSql": "SELECT time, CASE WHEN is_anomaly THEN 1 ELSE 0 END AS \"alarm\" FROM pdm_scores WHERE $__timeFilter(time) AND machine_id = '$machine' ORDER BY time"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "type": "timeseries",
+   "title": "Temperature (\u00b0C)",
+   "datasource": {
+    "type": "postgres",
+    "uid": "pdm-pg"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {
+     "unit": "celsius"
+    },
+    "overrides": []
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "postgres",
+      "uid": "pdm-pg"
+     },
+     "format": "time_series",
+     "rawQuery": true,
+     "editorMode": "code",
+     "rawSql": "SELECT time, temperature_c AS \"temperature\" FROM pdm_temperature WHERE $__timeFilter(time) AND machine_id = '$machine' ORDER BY time"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "type": "timeseries",
+   "title": "RMS and envelope kurtosis",
+   "datasource": {
+    "type": "postgres",
+    "uid": "pdm-pg"
+   },
+   "gridPos": {
+    "x": 12,
+    "y": 8,
+    "w": 12,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "postgres",
+      "uid": "pdm-pg"
+     },
+     "format": "time_series",
+     "rawQuery": true,
+     "editorMode": "code",
+     "rawSql": "SELECT time, (features->>'rms')::float AS \"rms\", (features->>'env_kurtosis')::float AS \"env_kurtosis\" FROM pdm_features WHERE $__timeFilter(time) AND machine_id = '$machine' ORDER BY time"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "type": "timeseries",
+   "title": "Health indicator (score / threshold, 1 = alarm level)",
+   "datasource": {
+    "type": "postgres",
+    "uid": "pdm-pg"
+   },
+   "gridPos": {
+    "x": 0,
+    "y": 16,
+    "w": 24,
+    "h": 8
+   },
+   "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+   },
+   "targets": [
+    {
+     "refId": "A",
+     "datasource": {
+      "type": "postgres",
+      "uid": "pdm-pg"
+     },
+     "format": "time_series",
+     "rawQuery": true,
+     "editorMode": "code",
+     "rawSql": "SELECT time, score/NULLIF(threshold,0) AS \"health indicator\" FROM pdm_scores WHERE $__timeFilter(time) AND machine_id = '$machine' ORDER BY time"
+    }
+   ]
+  }
+ ],
+ "templating": {
+  "list": [
+   {
+    "name": "machine",
+    "type": "query",
+    "datasource": {
+     "type": "postgres",
+     "uid": "pdm-pg"
+    },
+    "label": "Machine",
+    "query": "SELECT DISTINCT machine_id FROM pdm_scores ORDER BY 1",
+    "refresh": 1,
+    "current": {}
+   }
+  ]
+ }
+}

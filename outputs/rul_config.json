@@ -1,0 +1,4 @@
+{
+  "failure_hi": 22.82445526123047,
+  "note": "median score/threshold during the SIMULATED failed state; replace with a value learned from your own run-to-failure data"
+}

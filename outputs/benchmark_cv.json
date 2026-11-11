@@ -1,0 +1,1252 @@
+{
+  "protocol": "leave-one-load-out CV, CWRU 48kHz DE",
+  "window_s": 0.125,
+  "seq_len": 8,
+  "n_runs_per_method": {
+    "LSTM-AE | A legacy (basic, z-score, mean+3sd, leaky val)": 4,
+    "LSTM-AE | B + gap-separated validation": 4,
+    "LSTM-AE | C + robust scaling & 99.5th pct threshold": 4,
+    "LSTM-AE | D + envelope features (14)": 4,
+    "LSTM-AE | E + cross-load threshold calibration": 4,
+    "Isolation Forest | basic 10 feat": 4,
+    "One-Class SVM | basic 10 feat": 4,
+    "Statistical Threshold | basic 10 feat": 4,
+    "Isolation Forest | extended 14 feat": 4,
+    "One-Class SVM | extended 14 feat": 4,
+    "Statistical Threshold | extended 14 feat": 4,
+    "LSTM-AE | F multi-condition (nested) calibration": 4,
+    "LSTM-AE | G F + advanced features (23)": 4,
+    "LSTM-AE | H F + fan-end channel fusion (27)": 4,
+    "LSTM-AE | I F + signal augmentation": 4,
+    "CNN-AE | J F with 1D-CNN autoencoder": 4,
+    "TCN-AE | K F with TCN autoencoder": 4
+  },
+  "summary": {
+    "LSTM-AE | A legacy (basic, z-score, mean+3sd, leaky val)": {
+      "fpr": {
+        "mean": 0.5310457516339869,
+        "std": 0.47023350373732387
+      },
+      "fpr_persist": {
+        "mean": 0.5160265019249709,
+        "std": 0.46523803986966566
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "LSTM-AE | B + gap-separated validation": {
+      "fpr": {
+        "mean": 0.5800653594771242,
+        "std": 0.42222361338527165
+      },
+      "fpr_persist": {
+        "mean": 0.5634121228400036,
+        "std": 0.4178243444715977
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "LSTM-AE | C + robust scaling & 99.5th pct threshold": {
+      "fpr": {
+        "mean": 0.5784313725490197,
+        "std": 0.423615641185653
+      },
+      "fpr_persist": {
+        "mean": 0.5552421881994807,
+        "std": 0.42658613664803835
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "LSTM-AE | D + envelope features (14)": {
+      "fpr": {
+        "mean": 0.5310457516339869,
+        "std": 0.4692331388149088
+      },
+      "fpr_persist": {
+        "mean": 0.5111245411406572,
+        "std": 0.4696300225204729
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "LSTM-AE | E + cross-load threshold calibration": {
+      "fpr": {
+        "mean": 0.25,
+        "std": 0.4330127018922193
+      },
+      "fpr_persist": {
+        "mean": 0.24315068493150685,
+        "std": 0.4211493401965421
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "Isolation Forest | basic 10 feat": {
+      "fpr": {
+        "mean": 0.428125,
+        "std": 0.40001220684499117
+      },
+      "fpr_persist": {
+        "mean": 0.41406249999999994,
+        "std": 0.42196468954019123
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 0.999300056561086,
+        "std": 0.0012123375986235734
+      },
+      "pr_auc_bal": {
+        "mean": 0.9990805491336101,
+        "std": 0.0015925356156504052
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "One-Class SVM | basic 10 feat": {
+      "fpr": {
+        "mean": 0.6734375,
+        "std": 0.33774224523851026
+      },
+      "fpr_persist": {
+        "mean": 0.621875,
+        "std": 0.3734996025767631
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "Statistical Threshold | basic 10 feat": {
+      "fpr": {
+        "mean": 0.48593749999999997,
+        "std": 0.46246568707175456
+      },
+      "fpr_persist": {
+        "mean": 0.4828125,
+        "std": 0.48285800756407676
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 0.9999976432880845,
+        "std": 4.081944776510349e-06
+      },
+      "pr_auc_bal": {
+        "mean": 0.9999976579260466,
+        "std": 4.0565910822226205e-06
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "Isolation Forest | extended 14 feat": {
+      "fpr": {
+        "mean": 0.5390625,
+        "std": 0.39721626567746443
+      },
+      "fpr_persist": {
+        "mean": 0.5078125,
+        "std": 0.453445468572297
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 0.9999505090497738,
+        "std": 8.572084030671733e-05
+      },
+      "pr_auc_bal": {
+        "mean": 0.9999500637623328,
+        "std": 8.649210077844318e-05
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "One-Class SVM | extended 14 feat": {
+      "fpr": {
+        "mean": 0.7515625,
+        "std": 0.36175502652865793
+      },
+      "fpr_persist": {
+        "mean": 0.7390625,
+        "std": 0.3981494056491231
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 0.996875,
+        "std": 0.00541265877365277
+      },
+      "pr_auc_bal": {
+        "mean": 0.9939024390243902,
+        "std": 0.010561285412005406
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "Statistical Threshold | extended 14 feat": {
+      "fpr": {
+        "mean": 0.5765625,
+        "std": 0.4041864659024965
+      },
+      "fpr_persist": {
+        "mean": 0.5625,
+        "std": 0.430932854398455
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 0.9993636877828054,
+        "std": 0.0011021250896577942
+      },
+      "pr_auc_bal": {
+        "mean": 0.9993087695225376,
+        "std": 0.0011972463067049693
+      },
+      "sep_log10": {
+        "mean": NaN,
+        "std": NaN
+      }
+    },
+    "LSTM-AE | F multi-condition (nested) calibration": {
+      "fpr": {
+        "mean": 0.0136986301369863,
+        "std": 0.02372672339135448
+      },
+      "fpr_persist": {
+        "mean": 0.0136986301369863,
+        "std": 0.02372672339135448
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.49264686554670334,
+        "std": 0.21018604305568905
+      }
+    },
+    "LSTM-AE | G F + advanced features (23)": {
+      "fpr": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "fpr_persist": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "sens_mean": {
+        "mean": 0.9623287671232876,
+        "std": 0.06524848932622485
+      },
+      "sens_min": {
+        "mean": 0.7773972602739726,
+        "std": 0.3855592551095104
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.5196223855018616,
+        "std": 0.21726790511402067
+      }
+    },
+    "LSTM-AE | H F + fan-end channel fusion (27)": {
+      "fpr": {
+        "mean": 0.0547945205479452,
+        "std": 0.09490689356541793
+      },
+      "fpr_persist": {
+        "mean": 0.0547945205479452,
+        "std": 0.09490689356541793
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.5242535769939423,
+        "std": 0.10500462777539021
+      }
+    },
+    "LSTM-AE | I F + signal augmentation": {
+      "fpr": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "fpr_persist": {
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.5824804231524467,
+        "std": 0.12447901418028623
+      }
+    },
+    "CNN-AE | J F with 1D-CNN autoencoder": {
+      "fpr": {
+        "mean": 0.0410958904109589,
+        "std": 0.07118017017406345
+      },
+      "fpr_persist": {
+        "mean": 0.03424657534246575,
+        "std": 0.059316808478386204
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.5428240224719048,
+        "std": 0.29945845404888805
+      }
+    },
+    "TCN-AE | K F with TCN autoencoder": {
+      "fpr": {
+        "mean": 0.07191780821917808,
+        "std": 0.12456529780461102
+      },
+      "fpr_persist": {
+        "mean": 0.06506849315068493,
+        "std": 0.1127019361089338
+      },
+      "sens_mean": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sens_min": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "auroc": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "pr_auc_bal": {
+        "mean": 1.0,
+        "std": 0.0
+      },
+      "sep_log10": {
+        "mean": 0.5410695262253284,
+        "std": 0.28409288058725884
+      }
+    }
+  },
+  "per_run": {
+    "LSTM-AE | A legacy (basic, z-score, mean+3sd, leaky val)": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9726027397260274,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.2454800098930368
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9869281045751634,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 0.9497034262326061
+      },
+      {
+        "fpr": 0.1111111111111111,
+        "fpr_persist": 0.10457516339869281,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.0781896241930902
+      },
+      {
+        "fpr": 0.013071895424836602,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 0.9251905162617182
+      }
+    ],
+    "LSTM-AE | B + gap-separated validation": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9726027397260274,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.2382924151918813
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9869281045751634,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 0.8624674483049555
+      },
+      {
+        "fpr": 0.09803921568627451,
+        "fpr_persist": 0.09803921568627451,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.3624058835887012
+      },
+      {
+        "fpr": 0.2222222222222222,
+        "fpr_persist": 0.19607843137254902,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 0.5876402174876165
+      }
+    ],
+    "LSTM-AE | C + robust scaling & 99.5th pct threshold": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9726027397260274,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.2546078157424927
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9869281045751634,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.1108597588539122
+      },
+      {
+        "fpr": 0.09803921568627451,
+        "fpr_persist": 0.0718954248366013,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.0709276688098905
+      },
+      {
+        "fpr": 0.21568627450980393,
+        "fpr_persist": 0.1895424836601307,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 0.6812756925821294
+      }
+    ],
+    "LSTM-AE | D + envelope features (14)": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9726027397260274,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.324766738414766
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9869281045751634,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.0147015410661695
+      },
+      {
+        "fpr": 0.08496732026143791,
+        "fpr_persist": 0.08496732026143791,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.003619210124015
+      },
+      {
+        "fpr": 0.0392156862745098,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 1.0860778987407667
+      }
+    ],
+    "LSTM-AE | E + cross-load threshold calibration": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9726027397260274,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.774490680694581
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 6.445963077545166
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.739272041320801
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.775601501464844
+      }
+    ],
+    "Isolation Forest | basic 10 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      },
+      {
+        "fpr": 0.60625,
+        "fpr_persist": 0.66875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 0.9972002262443439,
+        "pr_auc_bal": 0.9963221965344407
+      },
+      {
+        "fpr": 0.05,
+        "fpr_persist": 0.0125,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.05625,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      }
+    ],
+    "One-Class SVM | basic 10 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.225,
+        "fpr_persist": 0.11875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.46875,
+        "fpr_persist": 0.40625,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      }
+    ],
+    "Statistical Threshold | basic 10 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      },
+      {
+        "fpr": 0.89375,
+        "fpr_persist": 0.95625,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      },
+      {
+        "fpr": 0.025,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 0.9999905731523379,
+        "pr_auc_bal": 0.9999906317041867
+      },
+      {
+        "fpr": 0.025,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      }
+    ],
+    "Isolation Forest | extended 14 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      },
+      {
+        "fpr": 0.85625,
+        "fpr_persist": 0.94375,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 0.999802036199095,
+        "pr_auc_bal": 0.9998002550493311
+      },
+      {
+        "fpr": 0.0625,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.2375,
+        "fpr_persist": 0.1125,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      }
+    ],
+    "One-Class SVM | extended 14 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.9875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 0.9874999999999999,
+        "pr_auc_bal": 0.9756097560975608
+      },
+      {
+        "fpr": 0.13125,
+        "fpr_persist": 0.05,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.875,
+        "fpr_persist": 0.94375,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      }
+    ],
+    "Statistical Threshold | extended 14 feat": [
+      {
+        "fpr": 1.0,
+        "fpr_persist": 0.975,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      },
+      {
+        "fpr": 0.925,
+        "fpr_persist": 0.9875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 0.9974547511312217,
+        "pr_auc_bal": 0.9972350780901503
+      },
+      {
+        "fpr": 0.025,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0
+      },
+      {
+        "fpr": 0.35625,
+        "fpr_persist": 0.2875,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9667687108969856,
+        "auroc": 1.0,
+        "pr_auc_bal": 0.9999999999999999
+      }
+    ],
+    "LSTM-AE | F multi-condition (nested) calibration": [
+      {
+        "fpr": 0.0547945205479452,
+        "fpr_persist": 0.0547945205479452,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.21597379446029663,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.60966064929962
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.3636324107646942,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 6.4910428953170785
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.7202776074409485,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.019120616912842
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.670703649520874,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.351047902107239
+      }
+    ],
+    "LSTM-AE | G F + advanced features (23)": [
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.28161364793777466,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 5.432514886856079
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 0.8493150684931506,
+        "sens_min": 0.1095890410958904,
+        "sens_mean_persist": 0.8110343852809606,
+        "sep_log10": 0.32424288988113403,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 7.744328083992005
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.7297065258026123,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.4352718067169192
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.7429264783859253,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.976469569206238
+      }
+    ],
+    "LSTM-AE | H F + fan-end channel fusion (27)": [
+      {
+        "fpr": 0.2191780821917808,
+        "fpr_persist": 0.2191780821917808,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.40240606665611267,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.190235879421234
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.5544969439506531,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.775137662887573
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.679934561252594,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.3559674239158648
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.4601767361164093,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.420534930229187
+      }
+    ],
+    "LSTM-AE | I F + signal augmentation": [
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.42577776312828064,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.284879260063171
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.5095454454421997,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 5.154565405845642
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.6437355279922485,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 2.9595968937873858
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.7508629560470581,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 3.0573709917068497
+      }
+    ],
+    "CNN-AE | J F with 1D-CNN autoencoder": [
+      {
+        "fpr": 0.1643835616438356,
+        "fpr_persist": 0.136986301369863,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.21535587310791016,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.436228590011597
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.27291104197502136,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 6.212486705780029
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.8510264158248901,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.479824123382569
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.8320027589797974,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.905237612724305
+      }
+    ],
+    "TCN-AE | K F with TCN autoencoder": [
+      {
+        "fpr": 0.2876712328767123,
+        "fpr_persist": 0.2602739726027397,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.16209422051906586,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.550285239219665
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.3744376003742218,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 6.693541398048401
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.7777971625328064,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.578252592086792
+      },
+      {
+        "fpr": 0.0,
+        "fpr_persist": 0.0,
+        "sens_mean": 1.0,
+        "sens_min": 1.0,
+        "sens_mean_persist": 0.9586751767573686,
+        "sep_log10": 0.8499491214752197,
+        "auroc": 1.0,
+        "pr_auc_bal": 1.0,
+        "threshold": 4.790371112823487
+      }
+    ]
+  }
+}

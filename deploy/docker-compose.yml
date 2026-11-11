@@ -1,0 +1,42 @@
+# Secured PdM backend stack: MQTT broker (auth + TLS) + TimescaleDB + Grafana.
+# NOT tested by the author (no Docker in the dev sandbox); the Mosquitto config,
+# the SQL in the dashboard and the PostgreSQL schema were each tested separately.
+#
+# First run:
+#   cp .env.example .env   (edit passwords)
+#   ./gen_certs.sh <this-PC-hostname-or-IP>
+#   set -a; . ./.env; set +a; DEVICE_PW=$MQTT_DEVICE_PW BACKEND_PW=$MQTT_BACKEND_PW ./setup_users.sh
+#   docker compose up -d
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    ports: ["1883:1883", "8883:8883"]
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - ./mosquitto/passwd:/mosquitto/config/passwd:ro
+      - ./mosquitto/acl:/mosquitto/config/acl:ro
+      - ./mosquitto/certs:/mosquitto/certs:ro
+      - mosquitto_data:/mosquitto/data
+  timescaledb:
+    image: timescale/timescaledb:latest-pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pdm
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: pdm
+    ports: ["127.0.0.1:5432:5432"]       # local only; the bridge runs on the host
+    volumes: [pg_data:/var/lib/postgresql/data]
+  grafana:
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD}
+      PG_PASSWORD: ${PG_PASSWORD}
+    ports: ["3000:3000"]
+    depends_on: [timescaledb]
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+      - grafana_data:/var/lib/grafana
+volumes: {mosquitto_data: {}, pg_data: {}, grafana_data: {}}
